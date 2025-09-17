@@ -114,16 +114,27 @@ document.getElementById('play').addEventListener('click', function(){
 </script>
 
 <audio id="bg-music" src="Jorge Mateus Pra Sempre Com Você Como Sempre Feito Nunca Vídeo Oficial.mp3"></audio>
+<!-- Botão para iniciar a música -->
+<div id="music-btn" style="position:fixed; bottom:20px; right:20px; 
+    background:linear-gradient(45deg,#ff5c8a,#ff2d55);
+    color:white; padding:12px 20px; border-radius:30px;
+    font-size:14px; font-weight:bold; cursor:pointer; 
+    box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:999;">
+  ▶️ Tocar música
+</div>
 <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("bg-music");
-    audio.volume = 1.0;
-    audio.addEventListener("canplaythrough", () => {
-      audio.currentTime = 49;
-      audio.play().catch(() => {
-        console.log("O navegador bloqueou autoplay, precisa interação do usuário.");
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+
+  btn.addEventListener("click", () => {
+    audio.currentTime = 49; // começa aos 0:49
+    audio.play()
+      .then(() => {
+        btn.style.display = "none"; // esconde o botão depois de tocar
+      })
+      .catch(err => {
+        console.log("Erro ao tentar tocar música:", err);
       });
-    });
   });
 </script>
 </body>
