@@ -53,12 +53,10 @@
 </div>
 <div class="content">
 <h1><span class="names">Rhyan</span> &amp; <span class="names">Natalia</span></h1>
-<div class="since">Juntos há <strong>1 ano, 9 meses e 13 dias</strong> — <span class="small">desde <time id="startdate">2023-12-04</time></span></div>
+<div class="since">Só passando pra lembrar <strong>o quanto você é especial!</strong></div>
 <div class="counter" id="counter">Carregando contador...</div>
 <div class="controls">
-<div class="info">Toque para iniciar a música e permitir reprodução automática no seu navegador.</div>
 </div>
-<div class="small" style="margin-top:8px">Dica: se o áudio não tocar, verifique o bloqueador de anúncios ou permissões do navegador.</div>
 </div>
 </div>
 </div>
@@ -82,7 +80,7 @@ function updateCounter(){
     months += 12;
   }
   document.getElementById('counter').textContent =
-    `Tempo juntos: ${years} ano(s), ${months} mês(es) e ${days} dia(s)`;
+    `Eu te amo há: ${years} ano, ${months} meses e ${days} dias`;
 }
 updateCounter();
 setInterval(updateCounter, 1000*60); // refresh every minute
